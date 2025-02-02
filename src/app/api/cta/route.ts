@@ -41,12 +41,12 @@ export async function POST(request: Request) {
       message: 'Successfully added to waitlist',
       id: record[0].id
     });
-  } catch (error: any) {
+  } catch (error: Error | unknown) {
     console.error('Airtable API Error:', error);
     return NextResponse.json(
       { 
         message: 'Failed to add to waitlist', 
-        error: process.env.NODE_ENV === 'development' ? error.message : undefined 
+        error: process.env.NODE_ENV === 'development' ? error instanceof Error ? error.message : 'Unknown error' : undefined 
       },
       { status: 500 }
     );

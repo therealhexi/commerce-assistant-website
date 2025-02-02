@@ -30,7 +30,7 @@ export default function CTA() {
 
       const data = await response.json();
       setMessage(data.message);
-    } catch (error) {
+    } catch {
       setMessage('An error occurred while submitting the form.');
     } finally {
       setIsSubmitting(false);

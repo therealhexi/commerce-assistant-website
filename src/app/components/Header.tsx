@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Header() {
   const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
@@ -18,7 +19,14 @@ export default function Header() {
           <div className="flex items-center">
             <Link href="/">
               <span className="sr-only">Commerce</span>
-              <img className="h-10 w-auto" src="/logo-light.png" alt="Logo" />
+              <Image
+                src="/logo-light.png"
+                alt="Logo"
+                width={40}
+                height={40}
+                className="w-auto h-10"
+                priority
+              />
             </Link>
           </div>
           <div className="ml-10 space-x-8">

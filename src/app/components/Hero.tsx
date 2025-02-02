@@ -1,5 +1,3 @@
-import Link from "next/link"
-
 export default function Hero() {
   return (
     <div className="relative overflow-hidden bg-[#FDF6E3]">
