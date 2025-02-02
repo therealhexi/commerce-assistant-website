@@ -5,7 +5,7 @@ export default function Demo() {
         <div className="flex justify-center items-center">
           <iframe 
             className="w-full max-w-4xl aspect-video"
-            src="https://www.youtube.com/embed/c2s5wi7Nq_c?si=6EMgzI7gq0bg9EAx&autoplay=1&mute=1" 
+            src="https://www.youtube.com/embed/c2s5wi7Nq_c?si=6EMgzI7gq0bg9EAx&autoplay=1&mute=1&playbackRate=2" 
             title="YouTube video player" 
             frameBorder="0" 
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
