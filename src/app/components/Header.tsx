@@ -12,7 +12,7 @@ export default function Header() {
   }
 
   return (
-    <header className="bg-[#FDF6E3] shadow-sm sticky top-0 z-50">
+    <header className="bg-[#F7DC6F] shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="w-full py-6 flex items-center justify-between border-b border-black lg:border-none">
           <div className="flex items-center">
@@ -22,24 +22,24 @@ export default function Header() {
             </Link>
           </div>
           <div className="ml-10 space-x-8">
-            <a 
-              href="#features" 
+            <a
+              href="#features"
               onClick={(e) => scrollToSection(e, 'features')}
-              className="text-base font-medium text-black hover:text-gray-600"
+              className="text-lg text-black hover:text-gray-700 px-4 py-2 transition-all duration-200 hover:bg-black hover:text-white rounded-md"
             >
               Features
             </a>
-            <a 
-              href="#pricing" 
+            <a
+              href="#pricing"
               onClick={(e) => scrollToSection(e, 'pricing')}
-              className="text-base font-medium text-black hover:text-gray-600"
+              className="text-lg text-black hover:text-gray-700 px-4 py-2 transition-all duration-200 hover:bg-black hover:text-white rounded-md"
             >
               Pricing
             </a>
-            <a 
-              href="#cta" 
+            <a
+              href="#cta"
               onClick={(e) => scrollToSection(e, 'cta')}
-              className="text-base font-medium text-black hover:text-gray-600"
+              className="text-lg text-black hover:text-gray-700 px-4 py-2 transition-all duration-200 hover:bg-black hover:text-white rounded-md"
             >
               Contact
             </a>

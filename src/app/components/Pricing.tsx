@@ -1,6 +1,14 @@
-import Link from 'next/link'
+"use client"
 
 export default function Pricing() {
+  const scrollToCTA = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    const element = document.getElementById('cta')
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }
+  };
+
   return (
     <div id="pricing" className="bg-white py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -19,12 +27,13 @@ export default function Pricing() {
               <span className="text-4xl font-bold tracking-tight text-gray-900">$0</span>
               <span className="text-sm font-semibold leading-6 text-gray-600">/month</span>
             </p>
-            <Link
-              href="#"
+            <a
+              href="#cta"
+              onClick={scrollToCTA}
               className="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 text-black bg-yellow-400 hover:bg-yellow-500"
             >
               <span className="font-bold text-base">Get Started for Free</span>
-            </Link>
+            </a>
             <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
               <li className="flex gap-x-3">
                 <svg className="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
@@ -49,12 +58,13 @@ export default function Pricing() {
               <span className="text-4xl font-bold tracking-tight text-gray-900">$2.99</span>
               <span className="text-sm font-semibold leading-6 text-gray-600">/month</span>
             </p>
-            <Link
-              href="#"
+            <a
+              href="#cta"
+              onClick={scrollToCTA}
               className="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 text-black ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300"
             >
               Subscribe to Starter
-            </Link>
+            </a>
             <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
               <li className="flex gap-x-3">
                 <svg className="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor">
@@ -85,12 +95,13 @@ export default function Pricing() {
               <span className="text-4xl font-bold tracking-tight text-gray-900">$5.99</span>
               <span className="text-sm font-semibold leading-6 text-gray-600">/month</span>
             </p>
-            <Link
-              href="#"
+            <a
+              href="#cta"
+              onClick={scrollToCTA}
               className="mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 text-black ring-1 ring-inset ring-indigo-200 hover:ring-indigo-300"
             >
               Subscribe to Pro
-            </Link>
+            </a>
             <ul role="list" className="mt-8 space-y-3 text-sm leading-6 text-gray-600">
               <li className="flex gap-x-3">
                 <svg className="h-6 w-5 flex-none text-indigo-600" viewBox="0 0 20 20" fill="currentColor">

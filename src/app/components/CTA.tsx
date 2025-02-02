@@ -9,50 +9,33 @@ export default function CTA() {
   const [message, setMessage] = useState("")
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setMessage("")
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage("");
 
-    // Basic validation
     if (!email || !storeUrl) {
-      setMessage("Please fill in all required fields.")
-      setIsSubmitting(false)
-      return
+      setMessage("Please fill in all required fields.");
+      setIsSubmitting(false);
+      return;
     }
-
-    // Validate Shopify URL format
-    const shopifyUrlPattern = /^https?:\/\/(www\.)?[a-zA-Z0-9-]+\.myshopify\.com\/?.*$/
-    if (!shopifyUrlPattern.test(storeUrl)) {
-      setMessage("Please enter a valid Shopify store URL.")
-      setIsSubmitting(false)
-      return
-    }
-
-    const GOOGLE_SHEETS_API_URL = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_API_URL
 
     try {
-      const response = await fetch(GOOGLE_SHEETS_API_URL!, {
-        method: "POST",
+      const response = await fetch('/api/cta', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({ email, storeUrl }),
-      })
+      });
 
-      if (!response.ok) {
-        throw new Error("Network response was not ok")
-      }
-
-      setMessage("Thank you for joining our waitlist!")
-      setEmail("")
-      setStoreUrl("")
+      const data = await response.json();
+      setMessage(data.message);
     } catch (error) {
-      console.error("Error:", error)
-      setMessage("An error occurred. Please try again.")
+      setMessage('An error occurred while submitting the form.');
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <div id="cta" className="bg-[#FDF6E3] py-16">
