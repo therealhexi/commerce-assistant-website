@@ -79,7 +79,7 @@ export default function CTA() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="block w-full rounded-md px-4 py-3 border border-transparent text-base font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 sm:text-sm"
+              className="block w-full rounded-md px-4 py-3 border border-transparent text-base font-medium text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:ring-offset-2 sm:text-sm"
             >
               {isSubmitting ? "Joining..." : "Join Waitlist"}
             </button>
