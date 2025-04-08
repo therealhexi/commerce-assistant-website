@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <header className="bg-[#F7DC6F] shadow-sm sticky top-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Top">
-        <div className="w-full py-6 flex items-center justify-between border-b border-black lg:border-none">
+        <div className="w-full py-3 flex items-center justify-between border-b border-black lg:border-none">
           <div className="flex items-center">
             <Link href="/">
               <span className="sr-only">Commerce</span>
